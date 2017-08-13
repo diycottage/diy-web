@@ -1,0 +1,138 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" >
+    <link rel="stylesheet" href="style.css" >
+  </head>
+
+  <body class="wrapper">
+    <header>
+      <img src="assets/img/header.svg" >
+    </header>
+
+    <aside id="navbar">
+      <img id="nav-logo" class="hide" src="assets/img/nav-logo.svg" >
+      <a href="/">Home</a>
+      <a href="#">Blog</a>
+      <a href="https://www.youtube.com/channel/UCaK9Za8sPOdzusgMP9NT5lg">Videos</a>
+      <a href="#">Instagram</a>
+      <a href="#">About</a>
+    </aside>
+
+    <main>
+      <div class="slide-fixed slide-1">
+        <h3>Welcome to the DIY Life!</h3>
+      </div>
+      <div class="slide-scrolling">
+        <section>
+          <span class="section-title">This is a super cool title!</span>
+          <p>
+  Forage vape ethical, 3 wolf moon readymade kitsch schlitz kinfolk copper mug enamel pin post-ironic drinking vinegar quinoa. Pickled semiotics sartorial kale chips fam, vinyl vegan. Jianbing vexillologist tacos, letterpress migas irony sriracha yr occupy banjo. Chia poke small batch biodiesel polaroid hoodie leggings man braid humblebrag. Subway tile hot chicken ramps woke. Food truck synth unicorn succulents, yuccie vinyl readymade umami. Migas glossier skateboard salvia pickled fam subway tile. Keytar meditation art party swag schlitz dreamcatcher. Sriracha cornhole keffiyeh, thundercats 90's whatever quinoa cloud bread poutine flexitarian blue bottle church-key vinyl PBR&B. Scenester tofu williamsburg try-hard hoodie +1 VHS la croix pork belly intelligentsia copper mug affogato vegan subway tile plaid. Vice tumeric raclette stumptown kogi. Distillery pop-up organic enamel pin skateboard. Williamsburg blog raw denim, church-key paleo post-ironic keffiyeh pickled pabst ramps polaroid biodiesel plaid yr actually. Vice air plant pork belly hoodie tofu church-key tilde pabst etsy kale chips wolf jean shorts.
+          </p>
+        </section>
+        <section>
+          <span class="section-title">This is a super cool title!</span>
+          <p class="special">
+  Forage vape ethical, 3 wolf moon readymade kitsch schlitz kinfolk copper mug enamel pin post-ironic drinking vinegar quinoa. Pickled semiotics sartorial kale chips fam, vinyl vegan. Jianbing vexillologist tacos, letterpress migas irony sriracha yr occupy banjo. Chia poke small batch biodiesel polaroid hoodie leggings man braid humblebrag. Subway tile hot chicken ramps woke. Food truck synth unicorn succulents, yuccie vinyl readymade umami. Migas glossier skateboard salvia pickled fam subway tile. Keytar meditation art party swag schlitz dreamcatcher. Sriracha cornhole keffiyeh, thundercats 90's whatever quinoa cloud bread poutine flexitarian blue bottle church-key vinyl PBR&B. Scenester tofu williamsburg try-hard hoodie +1 VHS la croix pork belly intelligentsia copper mug affogato vegan subway tile plaid. Vice tumeric raclette stumptown kogi. Distillery pop-up organic enamel pin skateboard. Williamsburg blog raw denim, church-key paleo post-ironic keffiyeh pickled pabst ramps polaroid biodiesel plaid yr actually. Vice air plant pork belly hoodie tofu church-key tilde pabst etsy kale chips wolf jean shorts.
+          </p>
+        </section>
+      </div>
+      <div class="slide-fixed slide-2">
+        <h3>Such nice. Wow.</h3>
+      </div>
+      <div class="slide-scrolling">
+        <section>
+          <span class="section-title">This is another awesome title!</span>
+          <p>
+  Forage vape ethical, 3 wolf moon readymade kitsch schlitz kinfolk copper mug enamel pin post-ironic drinking vinegar quinoa. Pickled semiotics sartorial kale chips fam, vinyl vegan. Jianbing vexillologist tacos, letterpress migas irony sriracha yr occupy banjo. Chia poke small batch biodiesel polaroid hoodie leggings man braid humblebrag. Subway tile hot chicken ramps woke. Food truck synth unicorn succulents, yuccie vinyl readymade umami. Migas glossier skateboard salvia pickled fam subway tile. Keytar meditation art party swag schlitz dreamcatcher. Sriracha cornhole keffiyeh, thundercats 90's whatever quinoa cloud bread poutine flexitarian blue bottle church-key vinyl PBR&B. Scenester tofu williamsburg try-hard hoodie +1 VHS la croix pork belly intelligentsia copper mug affogato vegan subway tile plaid. Vice tumeric raclette stumptown kogi. Distillery pop-up organic enamel pin skateboard. Williamsburg blog raw denim, church-key paleo post-ironic keffiyeh pickled pabst ramps polaroid biodiesel plaid yr actually. Vice air plant pork belly hoodie tofu church-key tilde pabst etsy kale chips wolf jean shorts.
+          </p>
+        </section>
+      </div>
+      <!-- This is a dumb work around for now since I can't get the footer to go at the bottom of main -->
+      <footer>
+        Footer
+      </footer>
+    </main>
+
+    <script>
+      // Defining classnames.
+      var sticky = 'sticky';
+      var grow = 'grow';
+      var hide = 'hide';
+      var expandLogo = 'expand-logo';
+      var collapseLogo = 'collapse-logo';
+
+      // Grabbing dynamic elements.
+      var navbar = document.getElementById('navbar');
+      var header = document.getElementsByTagName('header')[0];;
+      var logo = document.getElementById('nav-logo');
+
+      var headerHeight = header.clientHeight;
+
+      // Make sure navbar behaves properly on refresh by running at least once.
+      handleScroll();
+
+      window.addEventListener('scroll', handleScroll);
+
+      function handleScroll(e) {
+        if (window.scrollY > headerHeight) {
+          addClass(sticky, navbar);
+          // Need to grow header to fill in space previously taken by navbar.
+          addClass(grow, header);
+
+          removeClass(hide, logo);
+          changeClass(collapseLogo, expandLogo, logo);
+        } else {
+          removeClass(sticky, navbar);
+          removeClass(grow, header);
+          changeClass(expandLogo, collapseLogo, logo);
+        }
+      }
+
+      function addClass(name, element) {
+        var classes = element.className.split(' ');
+        var existing = classes.filter(function(c) {
+          return c === name;
+        });
+
+        if (existing.length > 0) {
+          return;
+        }
+
+        element.className += ' ' + name;
+      }
+
+      function removeClass(name, element) {
+        var classes = element.className.split(' ');
+        var newClasses = classes.filter(function(c) {
+          return c !== name;
+        });
+
+        element.className = newClasses.join(' ');
+      }
+
+      function changeClass(prev, next, element) {
+        var classes = element.className.split(' ');
+        var found = false;
+
+        var newClasses = classes.map(function(c) {
+          if (c === prev) {
+            found = true;
+            return next;
+          }
+
+          return c;
+        })
+
+        // If existing class is not present, just add the new one.
+        if (!found) {
+          element.className += ' ' + next;
+          return;
+        }
+
+        element.className = newClasses.join(' ');
+      }
+    </script>
+  </body>
+</html>

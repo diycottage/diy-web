@@ -1,0 +1,220 @@
+/* Content font */
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+/* Frilly font */
+@import url('assets/fonts/bromello.ttf.woff');
+
+:root {
+	--sand: #ede0d5;
+	--shallows: #dff8eb;
+	--ocean: #94b7aa;
+	--deep: #51645d;
+	--harsh: #312f2f;
+	--highlight: #42d9c8;
+	--words: #000000;
+	--links: #000000;
+	--backing: #FFFFFF;
+	--borders: #000000;
+	--titles: #000000;
+}
+
+@font-face {
+	font-family: "bromello";
+	src: url(assets/fonts/bromello.ttf.woff) format("truetype");
+}
+
+html, body, main {
+	height: 100%;
+}
+
+.wrapper {
+	width: 100%;
+	font-family: "bromello";
+	font-size: xx-large;
+	color: var(--words);
+}
+/*
+.wrapper {
+	display: grid;
+	width: 100%;
+	grid-template-areas:
+		"head"
+		"nav"
+		"main";
+
+	grid-template-rows: 128px 48px 1fr;
+
+	font-family: "bromello";
+	font-size: xx-large;
+}
+*/
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 128px;
+}
+
+aside {
+	display: flex;
+	/* background-color: var(--shallows); */
+	background-color: white;
+	height: 96px;
+	align-items: center;
+	justify-content: space-evenly;
+
+	border-color: var(--borders);
+	border-style: solid;
+	border-width: 2px;
+	border-left: none;
+	border-right: none;
+	/* border-image: url('assets/img/borders.jpg') 25% round stretch; */
+}
+
+aside > * {
+	flex-grow: 1;
+	text-align: center;
+	text-decoration: none;
+	color: var(--links);
+
+	/* needed to hide the logo when at the top of the page. */
+	overflow: hidden;
+}
+
+aside > a:hover {
+	color: var(--highlight);
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 320px;
+	background-color: var(--sand);
+}
+
+p {
+	font-family: "Indie Flower", cursive;
+	margin: 1em 1em 1em 1em;
+	font-size: x-large;
+}
+
+.slide-fixed {
+	/* Centering content */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/* Creating parallax background */
+	min-height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.slide-scrolling {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100%;
+}
+
+.slide-fixed > h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.slide-1 {
+	background-image: url("assets/img/slide1.jpg");
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.slide-2 {
+	background-image: url("assets/img/slide2.jpg");
+	color: #FFFFFF;
+	text-align:center;
+}
+
+section {
+	border: 2px solid transparent;
+	border-radius: 10px;
+	/* border-color: var(--borders); */
+	border-image: url('assets/img/borders.jpg') 25% round stretch;
+	margin: 2em 2em 2em 2em;
+}
+
+.section-title {
+	position: relative;
+	top: -0.5em;
+	margin-left: 2em;
+	padding-left: 24px;
+	padding-right: 24px;
+	text-align: center;
+	background-color: var(--backing);
+	color: var(--titles);
+}
+
+.sticky {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	top: 0;
+}
+
+.grow {
+	height: calc(128px + 96px);
+}
+
+.hide {
+	display: none;
+}
+
+.collapse-logo {
+	flex: 1;
+	animation: flexShrink 300ms ease forwards;
+}
+
+.expand-logo {
+	flex: .00001;
+	animation: flexGrow 300ms ease forwards;
+}
+
+@keyframes flexGrow {
+	to {
+		flex: 1;
+	}
+}
+
+@keyframes flexShrink {
+	to {
+		flex: .00001;
+	}
+}
+
+.draw:after {
+	border: 0.1em solid transparent;
+	border-image: url('http://emptyeasel.com/wp-content/uploads/2012/11/creatingtexture2-carrielewis.jpg') 0 27 27 27 round stretch;
+	content: '';
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+}
+
+.draw:before {
+	border-top: 0.1em solid transparent;
+	border-image: url('http://emptyeasel.com/wp-content/uploads/2012/11/creatingtexture2-carrielewis.jpg') 27 0 0 0 stretch round;
+	content: '';
+	height: 3em;
+	left: 0;
+	top: 0;
+	width: 100%;
+	position:absolute;
+}
