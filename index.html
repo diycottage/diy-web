@@ -2,13 +2,23 @@
 
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" >
+    <link rel="stylesheet" href="assets/css/hamburgers/dist/hamburgers.min.css" >
     <link rel="stylesheet" href="style.css" >
   </head>
 
   <body class="wrapper">
+    <div id="menu-button-container">
+      <button id="menu-button" class="hamburger hamburger--elastic">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
     <header>
-      <img src="assets/img/header.svg" >
+      <img src="assets/img/header.svg">
     </header>
 
     <aside id="navbar">
@@ -34,8 +44,7 @@
         <section>
           <span class="section-title">This is a super cool title!</span>
           <p class="special">
-  Forage vape ethical, 3 wolf moon readymade kitsch schlitz kinfolk copper mug enamel pin post-ironic drinking vinegar quinoa. Pickled semiotics sartorial kale chips fam, vinyl vegan. Jianbing vexillologist tacos, letterpress migas irony sriracha yr occupy banjo. Chia poke small batch biodiesel polaroid hoodie leggings man braid humblebrag. Subway tile hot chicken ramps woke. Food truck synth unicorn succulents, yuccie vinyl readymade umami. Migas glossier skateboard salvia pickled fam subway tile. Keytar meditation art party swag schlitz dreamcatcher. Sriracha cornhole keffiyeh, thundercats 90's whatever quinoa cloud bread poutine flexitarian blue bottle church-key vinyl PBR&B. Scenester tofu williamsburg try-hard hoodie +1 VHS la croix pork belly intelligentsia copper mug affogato vegan subway tile plaid. Vice tumeric raclette stumptown kogi. Distillery pop-up organic enamel pin skateboard. Williamsburg blog raw denim, church-key paleo post-ironic keffiyeh pickled pabst ramps polaroid biodiesel plaid yr actually. Vice air plant pork belly hoodie tofu church-key tilde pabst etsy kale chips wolf jean shorts.
-          </p>
+  Forage vape ethical, 3 wolf moon readymade kitsch schlitz kinfolk copper mug enamel pin post-ironic drinking vinegar quinoa. Pickled semiotics sartorial kale chips fam, vinyl vegan. Jianbing vexillologist tacos, letterpress migas irony sriracha yr occupy banjo. Chia poke small batch biodiesel polaroid hoodie leggings man braid humblebrag. Subway tile hot chicken ramps woke. Food truck synth unicorn succulents, yuccie vinyl readymade umami. Migas glossier skateboard salvia pickled fam subway tile. Keytar meditation art party swag schlitz dreamcatcher. Sriracha cornhole keffiyeh, thundercats 90's whatever quinoa cloud bread poutine flexitarian blue bottle church-key vinyl PBR&B. Scenester tofu williamsburg try-hard hoodie +1 VHS la croix pork belly intelligentsia copper mug affogato vegan subway tile plaid. Vice tumeric raclette stumptown kogi. Distillery pop-up organic enamel pin skateboard. Williamsburg blog raw denim, church-key paleo post-ironic keffiyeh pickled pabst ramps polaroid biodiesel plaid yr actually. Vice air plant pork belly hoodie tofu church-key tilde pabst etsy kale chips wolf jean shorts.  </p>
         </section>
       </div>
       <div class="slide-fixed slide-2">
@@ -62,6 +71,7 @@
       var hide = 'hide';
       var expandLogo = 'expand-logo';
       var collapseLogo = 'collapse-logo';
+      var navbarActive = 'navbar-active';
 
       // Grabbing dynamic elements.
       var navbar = document.getElementById('navbar');
@@ -70,12 +80,28 @@
 
       var headerHeight = header.clientHeight;
 
+      // Rig up mobile menu.
+      initMenu();
+
       // Make sure navbar behaves properly on refresh by running at least once.
       handleScroll();
 
       window.addEventListener('scroll', handleScroll);
 
+      function initMenu() {
+        var button = document.getElementById('menu-button');
+
+        button.addEventListener('click', handleMenuClick(navbar, button));
+      }
+
       function handleScroll(e) {
+        // if not on desktop, we don't have to do any of this.
+        /*
+        if (displayType() != "desktop") {
+          return;
+        }
+        */
+
         if (window.scrollY > headerHeight) {
           addClass(sticky, navbar);
           // Need to grow header to fill in space previously taken by navbar.
@@ -127,12 +153,54 @@
 
         // If existing class is not present, just add the new one.
         if (!found) {
-          element.className += ' ' + next;
+          addClass(next, element);
           return;
         }
 
         element.className = newClasses.join(' ');
       }
+
+      function hasClass(name, element) {
+        var classes = element.className.split(' ');
+        for(var i = 0; i < classes.length; i++) {
+          if (classes[i] === name) {
+            return true;
+          }
+        }
+
+        return false;
+      }
+
+      function handleMenuClick(navbar, button) {
+        return function(e) {
+          console.log("Clicked!");
+          var result = hasClass(navbarActive, navbar);
+          if (result) {
+            removeClass("is-active", button);
+            removeClass(navbarActive, navbar);
+            return;
+          }
+
+          addClass("is-active", button);
+          addClass(navbarActive, navbar);
+        }
+      }
+
+      function displayType() {
+        var mobile = 500;
+        var tablet = 800;
+
+        if (window.innerWidth <= mobile) {
+          return "mobile";
+        }
+
+        if (window.innerWidth <= tablet) {
+          return "tablet";
+        }
+
+        return "desktop";
+      }
+
     </script>
   </body>
 </html>
