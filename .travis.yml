@@ -1,7 +1,9 @@
 sudo: false
 
 install: true
-script: echo "ETate says: Nothing to build"
+before_script: echo "Don't run pre-build"
+script: echo "Don't build"
+after_script: echo "Don't run post build"
 
 deploy: provider: s3
     access_key_id: $AWS_ACCESS_KEY
