@@ -283,5 +283,12 @@ section {
 		z-index: 3;
 		position: fixed;
 	}
+
+	.wrapper {
+		width: 100%;
+		font-family: "bromello";
+		font-size: large;
+		color: var(--words);
+	}
 }
 
