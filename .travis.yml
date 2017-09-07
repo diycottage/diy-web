@@ -2,7 +2,11 @@ language: go
 sudo: false
 
 install: true
-before_script: echo "Don't run pre-build"
+before_script:
+    echo "Remove .html file extensions for 'pretty' URLs"
+    for file in *.html; do
+        mv "$file" "${file%.html}"
+    done
 script: echo "Don't build"
 after_script: echo "Don't run post build"
 
