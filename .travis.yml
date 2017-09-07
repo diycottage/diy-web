@@ -2,11 +2,7 @@ language: go
 sudo: false
 
 install: true
-before_script:
-    echo "Remove .html file extensions for 'pretty' URLs"
-    for file in *.html; do
-        mv "$file" "${file%.html}"
-    done
+before_script: ./clean-html.sh
 script: echo "Don't build"
 after_script: echo "Don't run post build"
 
