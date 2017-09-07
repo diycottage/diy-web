@@ -1,8 +1,17 @@
 /* Content font */
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('assets/fonts/alwaystogether.woff');
 
 /* Frilly font */
+@import url('https://fonts.googleapis.com/css?family=Clicker+Script');
 @import url('assets/fonts/bromello.ttf.woff');
+
+@font-face {
+	font-family: "Always Together";
+	font-style: normal;
+	font-weight: 600;
+	src: url(assets/fonts/alwaystogether.woff) format('woff');
+}
 
 :root {
 	--sand: #ede0d5;
@@ -32,7 +41,8 @@ html, body, main {
 
 .wrapper {
 	width: 100%;
-	font-family: "bromello";
+	font-family: "Clicker Script", cursive;
+	font-weight: 1000;
 	font-size: x-large;
 	color: var(--words);
 }
@@ -58,6 +68,10 @@ header {
 	justify-content: center;
 	height: var(--header-height);
 	background-color: white;
+}
+
+header > img{
+	height: var(--header-height);
 }
 
 #menu-button-container {
@@ -113,8 +127,9 @@ footer {
 
 p {
 	font-family: "Indie Flower", cursive;
+	/* font-family: "Always Together"; */
 	margin: 1em 1em 1em 1em;
-	font-size: large;
+	font-size: x-large;
 }
 
 .slide-fixed {
