@@ -106,6 +106,7 @@ header > img{
 	justify-content: center;
 	text-decoration: none;
 	color: var(--links);
+	height: 100%;
 }
 
 #navbar > a:hover {

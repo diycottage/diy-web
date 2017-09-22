@@ -1,0 +1,28 @@
+{
+  "name": "diy-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diycottage/diy-web.git"
+  },
+  "author": "Erik Tate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diycottage/diy-web/issues"
+  },
+  "homepage": "https://github.com/diycottage/diy-web#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gzip": "^1.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-serve": "^1.4.0",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-sourcemaps": "^2.6.1"
+  }
+}
