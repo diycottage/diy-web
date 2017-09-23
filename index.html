@@ -2,11 +2,12 @@
 
 <html lang="en">
   <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" >
-    <link rel="stylesheet" href="assets/css/hamburgers.min.css" >
-    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="css/hamburgers.min.css" >
+    <link rel="stylesheet" href="dist/css/base.css" >
   </head>
 
   <body class="wrapper">
@@ -25,8 +26,9 @@
       <img id="nav-logo" class="hide" src="assets/img/header-no-circles.svg" >
       <a href="/">Home</a>
       <a href="#">Blog</a>
-      <a href="https://www.youtube.com/channel/UCaK9Za8sPOdzusgMP9NT5lg">Videos</a>
-      <a href="#">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCaK9Za8sPOdzusgMP9NT5lg">Youtube</a>
+      <a href="https://www.pinterest.com/diycottage/">Pinterest</a>
+      <a href="https://www.instagram.com/thediycottage/">Instagram</a>
       <a href="about.html">About</a>
     </aside>
 
@@ -64,143 +66,6 @@
       </footer>
     </main>
 
-    <script>
-      // Defining classnames.
-      var sticky = 'sticky';
-      var grow = 'grow';
-      var hide = 'hide';
-      var expandLogo = 'expand-logo';
-      var collapseLogo = 'collapse-logo';
-      var navbarActive = 'navbar-active';
-
-      // Grabbing dynamic elements.
-      var navbar = document.getElementById('navbar');
-      var header = document.getElementsByTagName('header')[0];;
-      var logo = document.getElementById('nav-logo');
-
-      var headerHeight = header.clientHeight;
-
-      // Rig up mobile menu.
-      initMenu();
-
-      // Make sure navbar behaves properly on refresh by running at least once.
-      handleScroll();
-
-      window.addEventListener('scroll', handleScroll);
-
-      function initMenu() {
-        var button = document.getElementById('menu-button');
-
-        button.addEventListener('click', handleMenuClick(navbar, button));
-      }
-
-      function handleScroll(e) {
-        // if not on desktop, we don't have to do any of this.
-        /*
-        if (displayType() != "desktop") {
-          return;
-        }
-        */
-
-        if (window.scrollY > headerHeight) {
-          addClass(sticky, navbar);
-          // Need to grow header to fill in space previously taken by navbar.
-          addClass(grow, header);
-
-          removeClass(hide, logo);
-          changeClass(collapseLogo, expandLogo, logo);
-        } else {
-          removeClass(sticky, navbar);
-          removeClass(grow, header);
-          changeClass(expandLogo, collapseLogo, logo);
-        }
-      }
-
-      function addClass(name, element) {
-        var classes = element.className.split(' ');
-        var existing = classes.filter(function(c) {
-          return c === name;
-        });
-
-        if (existing.length > 0) {
-          return;
-        }
-
-        element.className += ' ' + name;
-      }
-
-      function removeClass(name, element) {
-        var classes = element.className.split(' ');
-        var newClasses = classes.filter(function(c) {
-          return c !== name;
-        });
-
-        element.className = newClasses.join(' ');
-      }
-
-      function changeClass(prev, next, element) {
-        var classes = element.className.split(' ');
-        var found = false;
-
-        var newClasses = classes.map(function(c) {
-          if (c === prev) {
-            found = true;
-            return next;
-          }
-
-          return c;
-        })
-
-        // If existing class is not present, just add the new one.
-        if (!found) {
-          addClass(next, element);
-          return;
-        }
-
-        element.className = newClasses.join(' ');
-      }
-
-      function hasClass(name, element) {
-        var classes = element.className.split(' ');
-        for(var i = 0; i < classes.length; i++) {
-          if (classes[i] === name) {
-            return true;
-          }
-        }
-
-        return false;
-      }
-
-      function handleMenuClick(navbar, button) {
-        return function(e) {
-          console.log("Clicked!");
-          var result = hasClass(navbarActive, navbar);
-          if (result) {
-            removeClass("is-active", button);
-            removeClass(navbarActive, navbar);
-            return;
-          }
-
-          addClass("is-active", button);
-          addClass(navbarActive, navbar);
-        }
-      }
-
-      function displayType() {
-        var mobile = 500;
-        var tablet = 800;
-
-        if (window.innerWidth <= mobile) {
-          return "mobile";
-        }
-
-        if (window.innerWidth <= tablet) {
-          return "tablet";
-        }
-
-        return "desktop";
-      }
-
-    </script>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>

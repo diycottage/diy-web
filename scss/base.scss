@@ -1,0 +1,210 @@
+// Content font
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+// Frilly font
+@import url('https://fonts.googleapis.com/css?family=Clicker+Script');
+
+@font-face {
+	font-family: "Always Together";
+	font-style: normal;
+	font-weight: 600;
+	src: url(assets/fonts/alwaystogether.woff) format('woff');
+}
+
+// Colors
+$text: #000000;
+$header-background: #ffffff;
+$navbar-background: #ffffff;
+$background-color: #ffffff;
+$link-color: #000000;
+$highlight: #42d9c8;
+$footer-background: #ede0d5;
+$title-color: #000000;
+$section-border-color: #000000;
+$navbar-border-color: #000000;
+
+// Sizes
+$header-height: 128px;
+$navbar-height: 96px;
+$footer-height: 320px;
+$section-border-radius: 8px;
+
+// Lets make things fullscreen.
+html, body, main {
+	height: 100%;
+	background-color: $background-color;
+}
+
+
+// Configure header
+header {
+	img {
+		height: 100%;
+	}
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: $header-height;
+	background-color: $header-background;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: $footer-height;
+	background-color: $footer-background;
+}
+
+p {
+	font-family: "Indie Flower", cursive;
+	margin: 1em 1em 1em 1em;
+	font-size: 16pt;
+}
+
+section {
+	border: 2px solid;
+	border-radius: $section-border-radius;
+	border-color: $section-border-color;
+	margin: 2em 2em 2em 2em;
+}
+
+#navbar {
+	* {
+		flex-grow: 1;
+		text-align: center;
+
+		overflow: hidden;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		text-decoration: none;
+		color: $link-color;
+		height: 100%;
+	}
+
+	a:hover {
+		color: $highlight;
+	}
+
+	display: flex;
+	background-color: $navbar-background;
+	height: $navbar-height;
+	align-items: center;
+	justify-content: space-evenly;
+
+	border-color: $navbar-border-color;
+	border-style: solid;
+	border-width: 2px;
+	border-left: none;
+	border-right: none;
+}
+
+#nav-logo {
+	height: 100%;
+}
+
+#menu-button-container {
+	display: none;
+}
+
+.wrapper {
+	width: 100%;
+	font-family: "Clicker Script", cursive;
+	font-size: x-large;
+	color: $text;
+}
+
+.slide-fixed {
+	// Centering content
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	// Creating parallax background
+	min-height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.slide-scrolling {
+	display: flex;
+	// Column flex direction for paragraph bodies.
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100%;
+}
+
+.slide {
+	color:white;
+	text-align:center;
+}
+
+.slide-1 {
+	@extend .slide;
+	background-image: url("/assets/img/slide1.jpg");
+}
+
+.slide-2 {
+	@extend .slide;
+	background-image: url("/assets/img/slide2.jpg");
+}
+
+.section-title {
+	position: relative;
+	top: -0.5em;
+	margin-left: 2em;
+	padding-left: 24px;
+	padding-right: 24px;
+	text-align: center;
+	background-color: $background-color;
+	color: $title-color;
+}
+
+.sticky {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	top: 0;
+}
+
+.grow {
+	height: $header-height + $navbar-height;
+}
+
+.hide {
+	display: none;
+}
+
+.collapse-logo {
+	flex: 1;
+	animation: flexShrink 300ms ease forwards;
+}
+
+.expand-logo {
+	flex: .00001 !important;
+	animation: flexGrow 300ms ease forwards;
+}
+
+@keyframes flexGrow {
+	to {
+		flex: 1;
+	}
+}
+
+@keyframes flexShrink {
+	to {
+		flex: .00001;
+	}
+}
+
+@import 'small';
