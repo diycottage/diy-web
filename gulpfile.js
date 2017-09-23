@@ -16,7 +16,7 @@ gulp.task('compress', function() {
 gulp.task('sass', function() {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('./css'));
 });
 
 // Watch for project changes
