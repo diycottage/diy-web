@@ -10,7 +10,7 @@
   var modalOpen = 'modal-open';
 
   // Grabbing DOM
-  var body = document.getElementByTagName('body')[0];
+  var body = document.getElementsByTagName('body')[0];
   var navbar = document.getElementById('navbar');
   var header = document.getElementsByTagName('header')[0];
   var logo = document.getElementById('nav-logo');

@@ -14,14 +14,14 @@ gulp.task('compress', function() {
 
 // Compile SCSS directory
 gulp.task('sass', function() {
-  return gulp.src('./assets/scss/**/*.scss')
+  return gulp.src('./scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./dist/assets/css'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
 // Watch for project changes
 gulp.task('watch', function() {
-  gulp.watch('./assets/scss/**/*.scss', ['sass']);
+  gulp.watch('./scss/**/*.scss', ['sass']);
 });
 
 gulp.task('serve', serve({
