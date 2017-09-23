@@ -21,6 +21,7 @@ $highlight: #42d9c8;
 $footer-background: #ede0d5;
 $title-color: #000000;
 $section-border-color: #000000;
+$navbar-border-color: #000000;
 
 // Sizes
 $header-height: 128px;
@@ -38,7 +39,7 @@ html, body, main {
 // Configure header
 header {
 	img {
-		height: $header-height;
+		height: 100%;
 	}
 
 	display: flex;
@@ -60,7 +61,7 @@ footer {
 p {
 	font-family: "Indie Flower", cursive;
 	margin: 1em 1em 1em 1em;
-	font-size: x-large;
+	font-size: 16pt;
 }
 
 section {
@@ -95,10 +96,22 @@ section {
 	display: flex;
 	background-color: $navbar-background;
 	height: $navbar-height;
+	align-items: center;
+	justify-content: space-evenly;
+
+	border-color: $navbar-border-color;
+	border-style: solid;
+	border-width: 2px;
+	border-left: none;
+	border-right: none;
 }
 
 #nav-logo {
 	height: 100%;
+}
+
+#menu-button-container {
+	display: none;
 }
 
 .wrapper {
@@ -138,12 +151,12 @@ section {
 
 .slide-1 {
 	@extend .slide;
-	background-image: url("assets/img/slide1.jpg");
+	background-image: url("/assets/img/slide1.jpg");
 }
 
 .slide-2 {
 	@extend .slide;
-	background-image: url("assets/img/slide2.jpg");
+	background-image: url("/assets/img/slide2.jpg");
 }
 
 .section-title {
@@ -193,3 +206,5 @@ section {
 		flex: .00001;
 	}
 }
+
+@import 'small';
