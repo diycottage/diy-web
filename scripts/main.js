@@ -17,8 +17,12 @@
 
   var headerHeight = header.clientHeight;
 
+
   // Rig up mobile menu.
   initMenu();
+
+  // Make sure we have copyright text on the site.
+  copyright();
 
   // Make sure navbar behaves properly on refresh by running at least once.
   handleScroll();
@@ -135,4 +139,9 @@
     return false;
   }
 
+  // make sure we inject an up to date copyright
+  function copyright() {
+    var copyDOM = document.getElementById('copyright');
+    copyDOM.innerHTML = 'Copyright &copy; ' + new Date().getFullYear() + ' The DIY Cottage';
+  }
 })();
