@@ -18,7 +18,7 @@ $navbar-background: #ffffff;
 $background-color: #ffffff;
 $link-color: #000000;
 $highlight: #42d9c8;
-$footer-background: #ede0d5;
+$footer-background: #111111;
 $title-color: #000000;
 $section-border-color: #000000;
 $navbar-border-color: #000000;
@@ -28,6 +28,10 @@ $header-height: 128px;
 $navbar-height: 96px;
 $footer-height: 320px;
 $section-border-radius: 8px;
+
+// Fonts
+$content-font: 'Indie Flower', cursive;
+$frilly-font: 'Clicker Script', cursive;
 
 // Lets make things fullscreen.
 html, body, main {
@@ -54,13 +58,15 @@ footer {
 	align-items: center;
 	justify-content: center;
 
+	font-family: $content-font;
+	color: white;
 	height: $footer-height;
 	background-color: $footer-background;
 }
 
 p {
-	font-family: "Indie Flower", cursive;
-	margin: 1em 1em 1em 1em;
+	font-family: $content-font;
+	margin: 0em 1em 1em 1em;
 	font-size: 16pt;
 }
 
@@ -68,7 +74,7 @@ section {
 	border: 2px solid;
 	border-radius: $section-border-radius;
 	border-color: $section-border-color;
-	margin: 2em 2em 2em 2em;
+	margin: 2em 1em;
 }
 
 #navbar {
@@ -116,58 +122,21 @@ section {
 
 .wrapper {
 	width: 100%;
-	font-family: "Clicker Script", cursive;
+	font-family: $frilly-font;
 	font-size: x-large;
 	color: $text;
-}
-
-.slide-fixed {
-	// Centering content
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	// Creating parallax background
-	min-height: 100%;
-	background-size: cover;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.slide-scrolling {
-	display: flex;
-	// Column flex direction for paragraph bodies.
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	min-height: 100%;
-}
-
-.slide {
-	color:white;
-	text-align:center;
-}
-
-.slide-1 {
-	@extend .slide;
-	background-image: url("/assets/img/slide1.jpg");
-}
-
-.slide-2 {
-	@extend .slide;
-	background-image: url("/assets/img/slide2.jpg");
 }
 
 .section-title {
 	position: relative;
 	top: -0.5em;
-	margin-left: 2em;
+	margin-left: 1em;
 	padding-left: 24px;
 	padding-right: 24px;
 	text-align: center;
 	background-color: $background-color;
 	color: $title-color;
+	font-size: 24pt;
 }
 
 .sticky {
@@ -208,3 +177,4 @@ section {
 }
 
 @import 'small';
+@import 'slides';

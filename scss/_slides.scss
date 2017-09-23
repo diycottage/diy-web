@@ -1,0 +1,54 @@
+$device-widths: 1200 992 768 480 320;
+
+.slide-fixed {
+	// Centering content
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	// Creating parallax background
+	min-height: 100%;
+	background-size: cover;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.slide-scrolling {
+	// display: flex;
+	// // Column flex direction for paragraph bodies.
+	// flex-direction: column;
+	// align-items: center;
+	// justify-content: center;
+	// min-height: 100%;
+}
+
+// Generate slide classes for up to 16 different slides.
+// These classes assume image paths that look like:
+// /assets/img/slide-{slideNumber}-{deviceWidth}.jpg
+@each $width in $device-widths {
+	@media(max-width: #{$width}px) {
+		$class-slug: slide !default;
+
+		@for $i from 1 through 16 {
+			.#{$class-slug}-#{$i} {
+				color:white;
+				text-align:center;
+				background-image: url("/assets/img/slides/slide-#{$i}-#{$width}.jpg");
+			}
+		}
+	}
+}
+
+// Accounting for huge screens
+@media(min-width: #{nth($device-widths, 1)}px) {
+	$class-slug: slide !default;
+
+	@for $i from 1 through 16 {
+		.#{$class-slug}-#{$i} {
+			color:white;
+			text-align:center;
+			background-image: url("/assets/img/slides/slide-#{$i}.jpg");
+		}
+	}
+}
