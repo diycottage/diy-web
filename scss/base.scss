@@ -1,5 +1,7 @@
-// Content font
+// Content fonts
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 
 // Frilly font
 @import url('https://fonts.googleapis.com/css?family=Clicker+Script');
@@ -8,7 +10,7 @@
 	font-family: "Always Together";
 	font-style: normal;
 	font-weight: 600;
-	src: url(assets/fonts/alwaystogether.woff) format('woff');
+	src: url(/assets/fonts/alwaystogether.woff) format('woff');
 }
 
 // Colors
@@ -30,8 +32,10 @@ $footer-height: 320px;
 $section-border-radius: 8px;
 
 // Fonts
-$content-font: 'Indie Flower', cursive;
-$frilly-font: 'Clicker Script', cursive;
+$default-font: 'Lato';
+$content-font: 'Always Together', cursive;
+$frilly-font: 'Indie Flower', cursive;
+$nav-font: 'Always Together';
 
 // Lets make things fullscreen.
 html, body, main {
@@ -66,14 +70,12 @@ footer {
 
 p {
 	font-family: $content-font;
-	margin: 0em 1em 1em 1em;
-	font-size: 16pt;
+	margin: 1em 1em 1em 1em;
+	font-size: 20pt;
+	text-align: center;
 }
 
 section {
-	border: 2px solid;
-	border-radius: $section-border-radius;
-	border-color: $section-border-color;
 	margin: 2em 1em;
 }
 
@@ -90,14 +92,10 @@ section {
 		align-items: center;
 		justify-content: center;
 
-		text-decoration: none;
-		color: $link-color;
+		font-size: 24pt;
 		height: 100%;
 	}
 
-	a:hover {
-		color: $highlight;
-	}
 
 	display: flex;
 	background-color: $navbar-background;
@@ -110,6 +108,16 @@ section {
 	border-width: 2px;
 	border-left: none;
 	border-right: none;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+	font-family: $frilly-font;
+}
+
+a:hover {
+	color: $highlight;
 }
 
 #nav-logo {
@@ -128,15 +136,12 @@ section {
 }
 
 .section-title {
-	position: relative;
-	top: -0.5em;
-	margin-left: 1em;
-	padding-left: 24px;
-	padding-right: 24px;
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
 	background-color: $background-color;
 	color: $title-color;
-	font-size: 24pt;
+	font-size: 36pt;
 }
 
 .sticky {
@@ -178,3 +183,4 @@ section {
 
 @import 'small';
 @import 'slides';
+@import 'social';
