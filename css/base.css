@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 @import url("https://fonts.googleapis.com/css?family=Clicker+Script");
 @font-face {
   font-family: "Always Together";
   font-style: normal;
   font-weight: 600;
-  src: url(assets/fonts/alwaystogether.woff) format("woff"); }
+  src: url(/assets/fonts/alwaystogether.woff) format("woff"); }
 
 html, body, main {
   height: 100%;
@@ -23,20 +24,18 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Indie Flower", cursive;
+  font-family: "Always Together", cursive;
   color: white;
   height: 320px;
   background-color: #111111; }
 
 p {
-  font-family: "Indie Flower", cursive;
-  margin: 0em 1em 1em 1em;
-  font-size: 16pt; }
+  font-family: "Always Together", cursive;
+  margin: 1em 1em 1em 1em;
+  font-size: 20pt;
+  text-align: center; }
 
 section {
-  border: 2px solid;
-  border-radius: 8px;
-  border-color: #000000;
   margin: 2em 1em; }
 
 #navbar {
@@ -58,11 +57,16 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: #000000;
+    font-size: 24pt;
     height: 100%; }
-  #navbar a:hover {
-    color: #42d9c8; }
+
+a {
+  text-decoration: none;
+  color: #000000;
+  font-family: "Indie Flower", cursive; }
+
+a:hover {
+  color: #42d9c8; }
 
 #nav-logo {
   height: 100%; }
@@ -72,20 +76,17 @@ section {
 
 .wrapper {
   width: 100%;
-  font-family: "Clicker Script", cursive;
+  font-family: "Indie Flower", cursive;
   font-size: x-large;
   color: #000000; }
 
 .section-title {
-  position: relative;
-  top: -0.5em;
-  margin-left: 1em;
-  padding-left: 24px;
-  padding-right: 24px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   background-color: #ffffff;
   color: #000000;
-  font-size: 24pt; }
+  font-size: 36pt; }
 
 .sticky {
   position: fixed;
@@ -156,408 +157,128 @@ section {
   body.modal-open {
     overflow: hidden; } }
 
-.slide-fixed {
+.slide-container {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.slide-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.slide {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transform: translateZ(0);
+  will-change: transform; }
+
+.slide-1 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-1.jpg"); }
+
+.slide-2 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-2.jpg"); }
+
+.slide-3 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-3.jpg"); }
+
+.slide-4 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-4.jpg"); }
+
+.slide-5 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-5.jpg"); }
+
+.slide-6 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-6.jpg"); }
+
+.slide-7 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-7.jpg"); }
+
+.slide-8 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-8.jpg"); }
+
+.slide-9 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-9.jpg"); }
+
+.slide-10 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-10.jpg"); }
+
+.slide-11 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-11.jpg"); }
+
+.slide-12 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-12.jpg"); }
+
+.slide-13 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-13.jpg"); }
+
+.slide-14 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-14.jpg"); }
+
+.slide-15 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-15.jpg"); }
+
+.slide-16 {
+  color: white;
+  text-align: center;
+  background-image: url("/assets/img/slides/slide-16.jpg"); }
+
+.social {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100%;
-  background-size: cover;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center center; }
-
-@media (max-width: 1200px) {
-  .slide-1 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-1-1200.jpg"); }
-  .slide-2 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-2-1200.jpg"); }
-  .slide-3 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-3-1200.jpg"); }
-  .slide-4 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-4-1200.jpg"); }
-  .slide-5 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-5-1200.jpg"); }
-  .slide-6 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-6-1200.jpg"); }
-  .slide-7 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-7-1200.jpg"); }
-  .slide-8 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-8-1200.jpg"); }
-  .slide-9 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-9-1200.jpg"); }
-  .slide-10 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-10-1200.jpg"); }
-  .slide-11 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-11-1200.jpg"); }
-  .slide-12 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-12-1200.jpg"); }
-  .slide-13 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-13-1200.jpg"); }
-  .slide-14 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-14-1200.jpg"); }
-  .slide-15 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-15-1200.jpg"); }
-  .slide-16 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-16-1200.jpg"); } }
-
-@media (max-width: 992px) {
-  .slide-1 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-1-992.jpg"); }
-  .slide-2 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-2-992.jpg"); }
-  .slide-3 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-3-992.jpg"); }
-  .slide-4 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-4-992.jpg"); }
-  .slide-5 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-5-992.jpg"); }
-  .slide-6 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-6-992.jpg"); }
-  .slide-7 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-7-992.jpg"); }
-  .slide-8 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-8-992.jpg"); }
-  .slide-9 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-9-992.jpg"); }
-  .slide-10 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-10-992.jpg"); }
-  .slide-11 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-11-992.jpg"); }
-  .slide-12 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-12-992.jpg"); }
-  .slide-13 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-13-992.jpg"); }
-  .slide-14 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-14-992.jpg"); }
-  .slide-15 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-15-992.jpg"); }
-  .slide-16 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-16-992.jpg"); } }
-
-@media (max-width: 768px) {
-  .slide-1 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-1-768.jpg"); }
-  .slide-2 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-2-768.jpg"); }
-  .slide-3 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-3-768.jpg"); }
-  .slide-4 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-4-768.jpg"); }
-  .slide-5 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-5-768.jpg"); }
-  .slide-6 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-6-768.jpg"); }
-  .slide-7 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-7-768.jpg"); }
-  .slide-8 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-8-768.jpg"); }
-  .slide-9 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-9-768.jpg"); }
-  .slide-10 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-10-768.jpg"); }
-  .slide-11 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-11-768.jpg"); }
-  .slide-12 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-12-768.jpg"); }
-  .slide-13 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-13-768.jpg"); }
-  .slide-14 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-14-768.jpg"); }
-  .slide-15 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-15-768.jpg"); }
-  .slide-16 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-16-768.jpg"); } }
-
-@media (max-width: 480px) {
-  .slide-1 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-1-480.jpg"); }
-  .slide-2 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-2-480.jpg"); }
-  .slide-3 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-3-480.jpg"); }
-  .slide-4 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-4-480.jpg"); }
-  .slide-5 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-5-480.jpg"); }
-  .slide-6 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-6-480.jpg"); }
-  .slide-7 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-7-480.jpg"); }
-  .slide-8 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-8-480.jpg"); }
-  .slide-9 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-9-480.jpg"); }
-  .slide-10 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-10-480.jpg"); }
-  .slide-11 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-11-480.jpg"); }
-  .slide-12 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-12-480.jpg"); }
-  .slide-13 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-13-480.jpg"); }
-  .slide-14 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-14-480.jpg"); }
-  .slide-15 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-15-480.jpg"); }
-  .slide-16 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-16-480.jpg"); } }
-
-@media (max-width: 320px) {
-  .slide-1 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-1-320.jpg"); }
-  .slide-2 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-2-320.jpg"); }
-  .slide-3 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-3-320.jpg"); }
-  .slide-4 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-4-320.jpg"); }
-  .slide-5 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-5-320.jpg"); }
-  .slide-6 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-6-320.jpg"); }
-  .slide-7 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-7-320.jpg"); }
-  .slide-8 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-8-320.jpg"); }
-  .slide-9 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-9-320.jpg"); }
-  .slide-10 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-10-320.jpg"); }
-  .slide-11 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-11-320.jpg"); }
-  .slide-12 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-12-320.jpg"); }
-  .slide-13 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-13-320.jpg"); }
-  .slide-14 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-14-320.jpg"); }
-  .slide-15 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-15-320.jpg"); }
-  .slide-16 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-16-320.jpg"); } }
-
-@media (min-width: 1200px) {
-  .slide-1 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-1.jpg"); }
-  .slide-2 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-2.jpg"); }
-  .slide-3 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-3.jpg"); }
-  .slide-4 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-4.jpg"); }
-  .slide-5 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-5.jpg"); }
-  .slide-6 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-6.jpg"); }
-  .slide-7 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-7.jpg"); }
-  .slide-8 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-8.jpg"); }
-  .slide-9 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-9.jpg"); }
-  .slide-10 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-10.jpg"); }
-  .slide-11 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-11.jpg"); }
-  .slide-12 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-12.jpg"); }
-  .slide-13 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-13.jpg"); }
-  .slide-14 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-14.jpg"); }
-  .slide-15 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-15.jpg"); }
-  .slide-16 {
-    color: white;
-    text-align: center;
-    background-image: url("/assets/img/slides/slide-16.jpg"); } }
+  flex-wrap: wrap;
+  font-size: 24pt;
+  margin: 3em 0em;
+  height: 100%; }
+  .social a {
+    height: 2em;
+    margin: 1em 0em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24pt; }
+    .social a img {
+      height: 100%;
+      margin-right: 1em; }
