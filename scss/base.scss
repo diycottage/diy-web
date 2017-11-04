@@ -24,6 +24,7 @@ $footer-background: #111111;
 $title-color: #000000;
 $section-border-color: #000000;
 $navbar-border-color: #000000;
+$antique-blue: #AED3C9;
 
 // Sizes
 $header-height: 128px;
@@ -76,7 +77,7 @@ p {
 }
 
 section {
-	margin: 2em 1em;
+	padding: 2em 1em;
 }
 
 #navbar {
@@ -167,6 +168,10 @@ a:hover {
 .expand-logo {
 	flex: .00001 !important;
 	animation: flexGrow 300ms ease forwards;
+}
+
+.center {
+	text-align: center;
 }
 
 @keyframes flexGrow {
