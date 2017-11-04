@@ -53,7 +53,6 @@
 
   function handleMenuClick(navbar, button) {
     return function(e) {
-      var body = document.getElementsByTagName('body')[0];
       var result = hasClass(navbarActive, navbar);
       if (result) {
         removeClass(isActive, button);

@@ -1,4 +1,8 @@
 @media(max-width: 800px) {
+	main {
+		padding-top: $navbar-height;
+	}
+
 	header {
 		img {
 			height: 100%;
